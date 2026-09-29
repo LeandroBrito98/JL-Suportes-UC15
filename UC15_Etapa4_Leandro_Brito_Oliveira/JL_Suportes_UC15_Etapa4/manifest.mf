@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: jlsuportes.app.Main
+Class-Path: ../lib/mysql-connector-j-26.7.0.jar

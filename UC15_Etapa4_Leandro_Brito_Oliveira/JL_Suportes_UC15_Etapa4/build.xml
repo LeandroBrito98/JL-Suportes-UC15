@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JL_Suportes_UC15_Etapa4" default="jar" basedir=".">
+ <property name="src.dir" value="src"/><property name="build.dir" value="build"/><property name="classes.dir" value="${build.dir}/classes"/><property name="dist.dir" value="dist"/>
+ <path id="cp"><fileset dir="lib"><include name="*.jar"/></fileset></path>
+ <target name="clean"><delete dir="${build.dir}"/><delete dir="${dist.dir}"/></target>
+ <target name="compile"><mkdir dir="${classes.dir}"/><javac srcdir="${src.dir}" destdir="${classes.dir}" source="17" target="17" encoding="UTF-8" includeantruntime="false"><classpath refid="cp"/></javac></target>
+ <target name="jar" depends="compile"><mkdir dir="${dist.dir}"/><jar destfile="${dist.dir}/JL_Suportes_UC15_Etapa4.jar" basedir="${classes.dir}"><manifest><attribute name="Main-Class" value="jlsuportes.app.Main"/></manifest></jar></target>
+ <target name="run" depends="compile"><java classname="jlsuportes.app.Main" fork="true"><classpath><pathelement path="${classes.dir}"/><path refid="cp"/></classpath></java></target>
+</project>
